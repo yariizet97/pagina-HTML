@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Almacenar productos</title>
+</head>
+<body>
+	<h1>Almacenar productos</h1>
+	<label>Nombre del producto:</label>
+	<input type="text" id="nombre">
+	<label>Precio del producto:</label>
+	<input type="number" id="precio">
+	<button onclick="agregarProducto()">Agregar producto</button>
+	<button onclick="imprimirProductos()">Imprimir productos</button>
+	<button onclick="borrarProductos()">Borrar todo</button>
+	<button onclick="sumarPrecios()">Sumar precios</button>
+	<div id="resultado"></div>
+
+	<script>
+		var listaProductos = [];
+
+		function agregarProducto() {
+			// Obtener el nombre y el precio del producto
+			var nombre = document.getElementById("nombre").value;
+			var precio = parseFloat(document.getElementById("precio").value);
+			
+			// Validar que el precio sea válido
+			if (isNaN(precio)) {
+				alert("Ingrese un precio válido");
+				return;
+			}
+
+			// Agregar el producto a la lista
+			listaProductos.push({nombre: nombre, precio: precio});
+			
+			// Limpiar los campos de entrada
+			document.getElementById("nombre").value = "";
+			document.getElementById("precio").value = "";
+		}
+
+		function imprimirProductos() {
+			// Ordenar la lista de productos por orden de ingreso
+			var listaOrdenada = listaProductos.slice().reverse();
+
+			// Crear una tabla para mostrar los productos
+			var tabla = "<table><tr><th>Nombre</th><th>Precio</th></tr>";
+			for (var i = 0; i < listaOrdenada.length; i++) {
+				var producto = listaOrdenada[i];
+				tabla += "<tr><td>" + producto.nombre + "</td><td>" + producto.precio + "</td></tr>";
+			}
+			tabla += "</table>";
+
+			// Imprimir la tabla en la página web
+			var resultado = document.getElementById("resultado");
+			resultado.innerHTML = tabla;
+		}
+
+		function borrarProductos() {
+			// Borrar todos los productos de la lista
+			listaProductos = [];
+
+			// Limpiar la tabla de productos
+			var resultado = document.getElementById("resultado");
+			resultado.innerHTML = "";
+		}
+
+		function sumarPrecios() {
+			// Sumar los precios de todos los productos
+			var total = 0;
+			for (var i = 0; i < listaProductos.length; i++) {
+				total += listaProductos[i].precio;
+			}
+
+			// Mostrar el total en un mensaje de alerta
+			alert("El total de los precios es: " + total);
+		}
+	</script>
+</body>
+</html>

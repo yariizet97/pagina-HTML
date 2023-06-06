@@ -1,0 +1,116 @@
+<html>
+<head>
+<body bgcolor="gray">
+<title>productos2</title>
+
+<body>
+  <font color ="black">
+    <center><p style="font-size:80px;"><mark>"Base de productos 2"</mark></p></center>
+<html>
+<head>
+	<title>Lista de Productos</title>
+</head>
+<body>
+	<h2>Ingrese el nombre y precio de los productos:</h2>
+	
+	<label for="nombre">Nombre del Producto:</label>
+	<input type="text" id="nombre">
+	
+	<label for="precio">Precio:</label>
+	<input type="number" id="precio" step="0.01">
+	
+	<button onclick="agregarProducto()">Agregar Producto</button>
+	<button onclick="borrarTodo()">Borrar Todo</button>
+	<button onclick="calcularTotal()">Calcular Total</button>
+	
+	<h2>Lista de Productos:</h2>
+	<ul id="listaProductos">
+		
+	</ul>
+	
+	<h2>Total a Pagar:</h2>
+	<p id="total"></p>
+	
+	<script>
+		var productos = [];
+		
+		function agregarProducto() {
+			var nombre = document.getElementById("nombre").value;
+			var precio = document.getElementById("precio").value;
+			
+			var producto = {
+				nombre: nombre,
+				precio: precio
+			};
+			
+			productos.push(producto);
+			
+			actualizarLista();
+		}
+		
+		function actualizarLista() {
+			var listaProductos = document.getElementById("listaProductos");
+			listaProductos.innerHTML = "";
+			
+			for (var i = 0; i < productos.length; i++) {
+				var li = document.createElement("li");
+				li.innerHTML = productos[i].nombre + ": $" + productos[i].precio;
+				listaProductos.appendChild(li);
+			}
+		}
+		
+		function borrarTodo() {
+			productos = [];
+			actualizarLista();
+			document.getElementById("total").innerHTML = "";
+		}
+		
+		function calcularTotal() {
+			var total = 0;
+			
+			for (var i = 0; i < productos.length; i++) {
+				total += parseFloat(productos[i].precio);
+			}
+			
+			document.getElementById("total").innerHTML = "$" + total.toFixed(2);
+		}
+	</script>
+</body>
+
+	<title>Imágenes morett</title>
+<body>
+	<img src="imagenes/foset.jpg" alt="Imagen 1">
+	<img src="imagenes/atan.jpg" alt="Imagen 2">
+	<img src="imagenes/tornillos.jpg" alt="Imagen 3">
+	<img src="imagenes/carretillas.jpg" alt="Imagen 4">
+	<img src="imagenes/tubos.jpg" alt="Imagen 5">
+	<h2><font color="black">foset termoflow $1,375<font color="grench">-----<font color="black"> ATANLEY$1,245<font color="grench">-----<font color="black">TORNILLOS $29<font color="grench">------<font color="black">CARRETILLAS  $1,350<font color="grench">-----<font color="black">TUVOS PVC 3*15$1,307</font></h2>
+  <br></br>
+  <br></br>
+  <img src="imagenes/escu.jpg" alt="Imagen 6">
+  <img src="imagenes/marti.jpg" alt="Imagen 7">
+	<img src="imagenes/compas.jpg" alt="Imagen 8">
+	<img src="imagenes/pincel.jpg" alt="Imagen 9">
+	<img src="imagenes/pin.jpg" alt="Imagen 10">
+	<h2><font color="black">ESCUADRA DE CONBINACION $225<font color="grench">-----<font color="black">MARTILLOS $400<font color="grench">-----<font color="black">COMPAS $349<font color="grench">------<font color="black">PINCEL PARA PINTURA $146<font color="grench">--------<font color="black">PINTURA VINILICA$599</font></h2>
+<br></br>
+<br></br>
+
+  <a href="https://jalisco.guiaempresas.com.mx/empresas/jalisco-ciudad-guzman-ciudad-guzman-centro/1762735/Ferreteria-y-Tlapaleria-Morett.html">
+	<center><button><h1><font color="orange">Visita el link para tu compra</h1></button></center>
+	</a>
+	<br></br>
+<br></br>
+	<div style="float: left;">
+		<img src="" height="300" width="300">
+	</div>
+	<font color="black">
+		  <center><h1>MUCHAS GRACIAS<3</h1></center>
+</font>
+  </a>
+</body>
+</html>
+<br>Agradecemos su visita<3</br>
+</head>
+</html>
+</body>

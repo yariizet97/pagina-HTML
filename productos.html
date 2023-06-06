@@ -1,0 +1,108 @@
+<html>
+<head>
+<body bgcolor="gray">
+<title>catalogo2</title>
+
+<body>
+  <center><p style="font-size:80px;"><mark>"catalogo"</mark></p></center>
+
+  <font color ="black">
+    <html>
+<head>
+	<title>Lista de Productos</title>
+</head>
+<body>
+	<font color ="black"><h2>Ingrese el nombre y precio de los productos:</h2>
+	
+	<label for="nombre">Nombre del Producto:</label>
+	<input type="text" id="nombre">
+	
+	<label for="precio">Precio:</label>
+	<input type="number" id="precio" step="0.01">
+	
+	<button onclick="agregarProducto()">Agregar Producto</button>
+	<button onclick="borrarTodo()">Borrar Todo</button>
+	<button onclick="calcularTotal()">Calcular Total</button>
+	
+	<h2>Lista de Productos:</h2>
+	<ul id="listaProductos">
+		
+	</ul>
+	
+	<h2>Total A Pagar:</h2>
+	<p id="total"></p>
+	
+	<script>
+		var productos = [];
+		
+		function agregarProducto() {
+			var nombre = document.getElementById("nombre").value;
+			var precio = document.getElementById("precio").value;
+			
+			var producto = {
+				nombre: nombre,
+				precio: precio
+			};
+			
+			productos.push(producto);
+			
+			actualizarLista();
+		}
+		
+		function actualizarLista() {
+			var listaProductos = document.getElementById("listaProductos");
+			listaProductos.innerHTML = "";
+			
+			for (var i = 0; i < productos.length; i++) {
+				var li = document.createElement("li");
+				li.innerHTML = productos[i].nombre + ": $" + productos[i].precio;
+				listaProductos.appendChild(li);
+			}
+		}
+		
+		function borrarTodo() {
+			productos = [];
+			actualizarLista();
+			document.getElementById("total").innerHTML = "";
+		}
+		
+		function calcularTotal() {
+			var total = 0;
+			
+			for (var i = 0; i < productos.length; i++) {
+				total += parseFloat(productos[i].precio);
+			}
+			
+			document.getElementById("total").innerHTML = "$" + total.toFixed(2);
+		}
+	</script>
+ 
+	<title>muestras</title>
+<body>
+	<img src="imagenes/flexometro.jpg" alt="Imagen 1">
+	<img src="imagenes/clavadora.jpg" alt="Imagen 2">
+	<img src="imagenes/lona.jpg" alt="Imagen 3">
+	<img src="imagenes/piezas.jpg" alt="Imagen 4">
+	<img src="imagenes/fromm.jpg" alt="Imagen 5">
+  <h2><font color="black">flexometro griperr $189<font color="grench">---------<font color="black">clavadora neumatica $14,240<font color="grench">-----------<font color="black">lona polietileno $206<font color="grench">---------<font color="black">piezas petrul $1,185<font color="grench">---------<font color="black">fromm p319 $101,699.20</font></h2>
+  <br></br>
+  <br></br>
+  <br></br>
+  <img src="imagenes/pico.jpg" alt="Imagen 6">
+  <img src="imagenes/retro.jpg" alt="Imagen 7">
+	<img src="imagenes/gene.jpg" alt="Imagen 8">
+	<img src="imagenes/kit.jpg" alt="Imagen 9">
+	<img src="imagenes/rotrativa.jpg" alt="Imagen 10">
+  <h2><font color="black">pico truper $550<font color="grench">-----<font color="black">retromartillo inalambrico $1,099<font color="grench">-----<font color="black">petrul-generador electrico $6,550<font color="grench">------<font color="black">kit truper  $4,849<font color="grench">-----<font color="black">truper herramienta rotrativa $5,487</font></h2>
+<br></br>
+  <a href="https://morettferreteria.com.mx/wp-content/uploads/2022/08/Catalogo-Morett-ferreteria.pdf">
+	<a href="https://morettferreteria.com.mx/wp-content/uploads/2022/08/Catalogo-Nuevo-automotriz.pdf"></a>
+    <center><button><h1><font color="silver">Visita el catalogo para tu compra</h1></button></center>
+  </a>
+</body>
+</html>
+  </font>
+<br></br>
+</head>
+</html>
+</body>
